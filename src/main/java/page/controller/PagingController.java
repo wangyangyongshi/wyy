@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import page.Entity.Movie;
-import page.dao.MovieDao;
+import page.mapper.MovieMapper;
 
 import javax.annotation.Resource;
 
@@ -14,13 +14,12 @@ import javax.annotation.Resource;
  */
 @Controller
 public class PagingController {
-
     @Resource
-    private MovieDao movieDao;
+    private MovieMapper movieMapper;
     @RequestMapping("/getBean")
     public ModelAndView getBean() {
         PageBean pageBean = new PageBean(1, 2, 5);
-        Movie one = movieDao.findOne();
+        Movie one = movieMapper.findOneMovie();
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject(pageBean);
         modelAndView.setViewName("index");
@@ -30,6 +29,7 @@ public class PagingController {
 
     @RequestMapping("/index")
     public ModelAndView index() {
+        System.out.println("我是中国工人");
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("index");
         return modelAndView;
