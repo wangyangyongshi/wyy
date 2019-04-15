@@ -19,4 +19,5 @@
 
     <import resource="spring-mvc.xml"/>
     <import resource="spring-mybatis.xml"/>
+    <import resource="spring-aop.xml"/>
 </beans>

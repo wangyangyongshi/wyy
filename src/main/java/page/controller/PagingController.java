@@ -4,8 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import page.Entity.Movie;
-import page.exception.MathException;
-import page.mapper.MovieMapper;
+import page.service.PageService;
 
 import javax.annotation.Resource;
 
@@ -16,17 +15,11 @@ import javax.annotation.Resource;
 @Controller
 public class PagingController {
     @Resource
-    private MovieMapper movieMapper;
+    private PageService pageService;
     @RequestMapping("/getBean")
     public ModelAndView getBean() {
         PageBean pageBean = new PageBean(1, 2, 5);
-        Movie one = movieMapper.findOneMovie();
-        try {
-            System.out.println(1 / 0);
-        } catch (MathException e) {
-            System.out.println(e.getMessage());
-        }
-
+        Movie one = pageService.findOneMovie();
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject(pageBean);
         modelAndView.setViewName("index");

@@ -1,13 +1,13 @@
 package page.service;
 
-import org.springframework.stereotype.Service;
+import page.Entity.Movie;
 
 /**
  * @author 王二小
  * @date 2019/3/27 23:15
  */
-@Service
-public class PageService {
 
+public interface PageService {
 
+    Movie findOneMovie();
 }
