@@ -505,4 +505,31 @@ public class Movie {
         this.releaseDate2 = releaseDate2;
     }
 
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "id=" + id +
+                ", parentId=" + parentId +
+                ", title='" + title + '\'' +
+                ", englishName='" + englishName + '\'' +
+                ", coverPic='" + coverPic + '\'' +
+                ", director='" + director + '\'' +
+                ", mainActor='" + mainActor + '\'' +
+                ", alias='" + alias + '\'' +
+                ", year='" + year + '\'' +
+                ", releaseDate=" + releaseDate +
+                ", score=" + score +
+                ", originalUrl='" + originalUrl + '\'' +
+                ", videoUrl='" + videoUrl + '\'' +
+                ", type=" + type +
+                ", isNewest=" + isNewest +
+                ", isHot=" + isHot +
+                ", orderSort=" + orderSort +
+                ", platform=" + platform +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                ", introduce='" + introduce + '\'' +
+                ", releaseDate2='" + releaseDate2 + '\'' +
+                '}';
+    }
 }

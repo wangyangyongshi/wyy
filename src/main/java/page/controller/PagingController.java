@@ -4,9 +4,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import page.Entity.Movie;
+import page.aop.CgLibProxy;
 import page.service.PageService;
+import page.service.PageServiceImpl;
 
 import javax.annotation.Resource;
+import java.lang.reflect.UndeclaredThrowableException;
 
 /**
  * @author 王二小
@@ -28,7 +31,13 @@ public class PagingController {
     }
 
     @RequestMapping("/index")
-    public ModelAndView index() {
+    public ModelAndView index() throws UndeclaredThrowableException {
+//        JdkProxy jdkProxy = new JdkProxy();
+//        PageService pageService = (PageService) jdkProxy.getJdkProxy(new PageServiceImpl());
+
+        CgLibProxy cgLibProxy = new CgLibProxy();
+        PageService pageService =  (PageService) cgLibProxy.getCglibProxy(new PageServiceImpl());
+        Movie one = pageService.findOneMovie();
         System.out.println("我是中国工人");
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("index");
