@@ -39,7 +39,7 @@ public class PagingController {
 //        PageService pageService =  (PageService) cgLibProxy.getCglibProxy(new PageServiceImpl());
         Movie one = pageService.findOneMovie();
         System.out.println(one.toString());
-        System.out.println("我是中国工人");
+        System.out.println("我是中国工 人");
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("index");
         return modelAndView;
