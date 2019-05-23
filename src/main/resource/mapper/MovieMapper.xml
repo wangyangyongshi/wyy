@@ -2,6 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="page.mapper.MovieMapper">
     <select id="findOneMovie" resultType="Movie">
-       select  * from  movie limit 1
+       select  * from  users limit 1
    </select>
 </mapper>
